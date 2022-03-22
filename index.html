@@ -20,6 +20,8 @@
 	const logoColor = "#000000";
 	const rightColor = "rgba(4, 217, 255, 0.5)";
 	const leftColor = "rgba(255, 16, 240, 0.5)";
+	const xOffset = 3;
+	const yOffset = 2;
 
 	// https://stackoverflow.com/a/36248266/6456163
 	const renderLogoInFont = (fontName, fontPath) => {
@@ -47,14 +49,14 @@
 			// ctx.shadowBlur = 4;
 
 			// Right and down shadow
-			ctx.shadowOffsetX = 3;
-			ctx.shadowOffsetY = 2;
+			ctx.shadowOffsetX = xOffset;
+			ctx.shadowOffsetY = yOffset;
 			ctx.shadowColor = rightColor;
 			ctx.fillText(text, xPos, yPos);
 
 			// Left and up shadow
-			ctx.shadowOffsetX = -3;
-			ctx.shadowOffsetY = -2;
+			ctx.shadowOffsetX = -xOffset;
+			ctx.shadowOffsetY = -yOffset;
 			ctx.shadowColor = leftColor;
 			ctx.fillText(text, xPos, yPos);
 
