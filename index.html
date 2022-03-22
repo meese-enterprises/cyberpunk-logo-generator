@@ -1,0 +1,117 @@
+<style>
+	div {
+		display: inline-block;
+		width: 256px;
+		height: 256px;
+	}
+
+	p {
+		width: 100%;
+		text-align: center;
+		margin: 0;
+		font-family: "Trebuchet MS";
+	}
+</style>
+
+<script>
+	const text = "M";
+	const logoSize = 256;
+	const fontSize = 200;
+	const logoColor = "#000000";
+	const rightColor = "rgba(4, 217, 255, 0.5)";
+	const leftColor = "rgba(255, 16, 240, 0.5)";
+
+	// https://stackoverflow.com/a/36248266/6456163
+	const renderLogoInFont = (fontName, fontPath) => {
+		const logoFont = new FontFace(fontName, `url(${fontPath})`);
+		logoFont.load().then((font) => {
+			document.fonts.add(font);
+
+			const logoDiv = document.createElement("div");
+			const canvas = document.createElement("canvas");
+			const ctx = canvas.getContext("2d");
+
+			// https://stackoverflow.com/a/39181687/6456163
+			canvas.width = logoSize;
+			canvas.height = logoSize;
+
+			const xPos = canvas.width / 2;
+			const yPos = canvas.height / 1.3;
+
+			ctx.font = `${fontSize}px ${fontName}`;
+			ctx.fillStyle = logoColor;
+			ctx.textAlign = "center";
+			ctx.fillText(text, xPos, yPos);
+
+			// Uncomment if you want rounded blurs instead of sharp edges
+			// ctx.shadowBlur = 4;
+
+			// Right and down shadow
+			ctx.shadowOffsetX = 3;
+			ctx.shadowOffsetY = 2;
+			ctx.shadowColor = rightColor;
+			ctx.fillText(text, xPos, yPos);
+
+			// Left and up shadow
+			ctx.shadowOffsetX = -3;
+			ctx.shadowOffsetY = -2;
+			ctx.shadowColor = leftColor;
+			ctx.fillText(text, xPos, yPos);
+
+			const displayedLogoName = document.createElement("p");
+			displayedLogoName.innerText = fontName;
+
+			logoDiv.appendChild(canvas);
+			logoDiv.appendChild(displayedLogoName);
+			document.body.appendChild(logoDiv);
+		});
+	}
+
+	renderLogoInFont("Adoria", "./fonts/Adoria.ttf");
+	renderLogoInFont("Avalon", "./fonts/Avalon.woff2");
+	renderLogoInFont("Beach Boy", "./fonts/BeachBoy.otf");
+	renderLogoInFont("Bios Bold", "./fonts/Bios-Bold.otf");
+	renderLogoInFont("Bios Regular", "./fonts/Bios-Regular.otf");
+
+	renderLogoInFont("Broken Console Bold Shadow", "./fonts/Broken-Console-Bold-Shadow.ttf");
+	renderLogoInFont("Broken Console Bold", "./fonts/Broken-Console-Bold.ttf");
+	renderLogoInFont("Broken Console", "./fonts/Broken-Console.ttf");
+	renderLogoInFont("Claudilla", "./fonts/Claudilla.ttf");
+	renderLogoInFont("Dirtchunk", "./fonts/Dirtchunk.otf");
+
+	renderLogoInFont("Enigmatica", "./fonts/Enigmatica.otf");
+	renderLogoInFont("Flare", "./fonts/Flare.ttf");
+	renderLogoInFont("Gluon", "./fonts/Gluon.ttf");
+	renderLogoInFont("Hermes", "./fonts/Hermes.otf");
+	renderLogoInFont("Hotliner Second", "./fonts/Hotliner-Second.otf");
+
+	renderLogoInFont("Hotliner Third", "./fonts/Hotliner-Third.otf");
+	renderLogoInFont("Hotliner", "./fonts/Hotliner.otf");
+	renderLogoInFont("HotRush Sans", "./fonts/HotRush-Sans.ttf");
+	renderLogoInFont("HotRush Sans Italic", "./fonts/HotRush-SansItalic.ttf");
+	renderLogoInFont("HotRush Sans Striped", "./fonts/HotRush-SansStriped.ttf");
+
+	renderLogoInFont("HotRush Sans Striped Italic", "./fonts/HotRush-SansStripedItalic.ttf");
+	renderLogoInFont("HotRush Script", "./fonts/HotRush-Script.otf");
+	renderLogoInFont("Hyperbole", "./fonts/Hyperbole.ttf");
+	renderLogoInFont("Kogapunk", "./fonts/Kogapunk.otf");
+	renderLogoInFont("Lagoon Beach Italic", "./fonts/LagoonBeach-Italic.otf");
+
+	renderLogoInFont("Lagoon Beach Italic", "./fonts/LagoonBeach-Italic.otf");
+	renderLogoInFont("Lagoon Beach", "./fonts/LagoonBeach.otf");
+	renderLogoInFont("Mokoto Glitch", "./fonts/Mokoto-Glitch.ttf");
+	renderLogoInFont("Mokoto Mark", "./fonts/Mokoto-Mark.ttf");
+	renderLogoInFont("Mokoto Outline", "./fonts/Mokoto-Outline.otf");
+
+	renderLogoInFont("Oxta", "./fonts/Oxta.otf");
+	renderLogoInFont("Raskhal", "./fonts/Raskhal.otf");
+	renderLogoInFont("Researcher Thin", "./fonts/Researcher-Thin.ttf");
+	renderLogoInFont("Researcher", "./fonts/Researcher.ttf");
+	renderLogoInFont("Starlit Drive", "./fonts/StarlitDrive.ttf");
+
+	// TODO: Combine this one with the other Starlight font
+	//renderLogoInFont("Starlit Drive Swash", "./fonts/StarlitDriveSwash.ttf");
+	renderLogoInFont("Tigerious", "./fonts/Tigerious.otf");
+	renderLogoInFont("Vandals", "./fonts/Vandals.ttf");
+	renderLogoInFont("ZORFICH", "./fonts/ZORFICH.otf");
+</script>
