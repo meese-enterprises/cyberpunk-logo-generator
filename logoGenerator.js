@@ -99,47 +99,51 @@ const renderLogoInFont = (fontName, fontPath, yOffset = 0) => {
 	});
 }
 
-renderLogoInFont("Adoria", "./fonts/Adoria.ttf", 15);
-renderLogoInFont("Avalon", "./fonts/Avalon.woff2");
-renderLogoInFont("Beach Boy", "./fonts/BeachBoy.otf");
-renderLogoInFont("Bios Bold", "./fonts/Bios-Bold.otf", -5);
-renderLogoInFont("Bios Regular", "./fonts/Bios-Regular.otf");
+const fontsToRender = [
+	[ "Adoria", "./fonts/Adoria.ttf", 15 ],
+	[ "Avalon", "./fonts/Avalon.woff2" ],
+	[ "Beach Boy", "./fonts/BeachBoy.otf" ],
+	[ "Bios Bold", "./fonts/Bios-Bold.otf", -5 ],
+	[ "Bios Regular", "./fonts/Bios-Regular.otf" ],
 
-renderLogoInFont("Broken Console Bold Shadow", "./fonts/Broken-Console-Bold-Shadow.ttf", 10);
-renderLogoInFont("Broken Console Bold", "./fonts/Broken-Console-Bold.ttf", 30);
-renderLogoInFont("Broken Console", "./fonts/Broken-Console.ttf", 30);
-renderLogoInFont("Claudilla", "./fonts/Claudilla.ttf", 10);
-renderLogoInFont("Dirtchunk", "./fonts/Dirtchunk.otf", 15);
+	[ "Broken Console Bold Shadow", "./fonts/Broken-Console-Bold-Shadow.ttf", 10 ],
+	[ "Broken Console Bold", "./fonts/Broken-Console-Bold.ttf", 30 ],
+	[ "Broken Console", "./fonts/Broken-Console.ttf", 30 ],
+	[ "Claudilla", "./fonts/Claudilla.ttf", 10 ],
+	[ "Dirtchunk", "./fonts/Dirtchunk.otf", 15 ],
 
-renderLogoInFont("Enigmatica", "./fonts/Enigmatica.otf", 30);
-renderLogoInFont("Flare", "./fonts/Flare.ttf", 25);
-renderLogoInFont("Gluon", "./fonts/Gluon.ttf", -30);
-renderLogoInFont("Hermes", "./fonts/Hermes.otf", -25);
-renderLogoInFont("Hotliner Second", "./fonts/Hotliner-Second.otf");
+	[ "Enigmatica", "./fonts/Enigmatica.otf", 30 ],
+	[ "Flare", "./fonts/Flare.ttf", 25 ],
+	[ "Gluon", "./fonts/Gluon.ttf", -30 ],
+	[ "Hermes", "./fonts/Hermes.otf", -25 ],
+	[ "Hotliner Second", "./fonts/Hotliner-Second.otf" ],
 
-renderLogoInFont("Hotliner Third", "./fonts/Hotliner-Third.otf");
-renderLogoInFont("Hotliner", "./fonts/Hotliner.otf");
-renderLogoInFont("HotRush Sans", "./fonts/HotRush-Sans.ttf", 20);
-renderLogoInFont("HotRush Sans Italic", "./fonts/HotRush-SansItalic.ttf", 20);
-renderLogoInFont("HotRush Sans Striped", "./fonts/HotRush-SansStriped.ttf", 20);
+	[ "Hotliner Third", "./fonts/Hotliner-Third.otf" ],
+	[ "Hotliner", "./fonts/Hotliner.otf" ],
+	[ "HotRush Sans", "./fonts/HotRush-Sans.ttf", 20 ],
+	[ "HotRush Sans Italic", "./fonts/HotRush-SansItalic.ttf", 20 ],
+	[ "HotRush Sans Striped", "./fonts/HotRush-SansStriped.ttf", 20 ],
 
-renderLogoInFont("HotRush Sans Striped Italic", "./fonts/HotRush-SansStripedItalic.ttf", 20);
-renderLogoInFont("HotRush Script", "./fonts/HotRush-Script.otf", 10);
-renderLogoInFont("Hyperbole", "./fonts/Hyperbole.ttf", -10);
-renderLogoInFont("Kogapunk", "./fonts/Kogapunk.otf", 35);
-renderLogoInFont("Lagoon Beach Italic", "./fonts/LagoonBeach-Italic.otf");
+	[ "HotRush Sans Striped Italic", "./fonts/HotRush-SansStripedItalic.ttf", 20 ],
+	[ "HotRush Script", "./fonts/HotRush-Script.otf", 10 ],
+	[ "Hyperbole", "./fonts/Hyperbole.ttf", -10 ],
+	[ "Kogapunk", "./fonts/Kogapunk.otf", 35 ],
+	[ "Lagoon Beach Italic", "./fonts/LagoonBeach-Italic.otf" ],
 
-renderLogoInFont("Lagoon Beach", "./fonts/LagoonBeach.otf", 15);
-renderLogoInFont("Mokoto Glitch", "./fonts/Mokoto-Glitch.ttf", 30);
-renderLogoInFont("Mokoto Mark", "./fonts/Mokoto-Mark.ttf", 30);
-renderLogoInFont("Mokoto Outline", "./fonts/Mokoto-Outline.otf", 30);
-renderLogoInFont("Oxta", "./fonts/Oxta.otf", 15);
+	[ "Lagoon Beach", "./fonts/LagoonBeach.otf", 15 ],
+	[ "Mokoto Glitch", "./fonts/Mokoto-Glitch.ttf", 30 ],
+	[ "Mokoto Mark", "./fonts/Mokoto-Mark.ttf", 30 ],
+	[ "Mokoto Outline", "./fonts/Mokoto-Outline.otf", 30 ],
+	[ "Oxta", "./fonts/Oxta.otf", 15 ],
 
-renderLogoInFont("Raskhal", "./fonts/Raskhal.otf");
-renderLogoInFont("Researcher Thin", "./fonts/Researcher-Thin.ttf");
-renderLogoInFont("Researcher", "./fonts/Researcher.ttf", 10);
-renderLogoInFont("Starlit Drive", "./fonts/StarlitDrive.ttf", 15);
-renderLogoInFont("Tigerious", "./fonts/Tigerious.otf", 10);
+	[ "Raskhal", "./fonts/Raskhal.otf" ],
+	[ "Researcher Thin", "./fonts/Researcher-Thin.ttf" ],
+	[ "Researcher", "./fonts/Researcher.ttf", 10 ],
+	[ "Starlit Drive", "./fonts/StarlitDrive.ttf", 15 ],
+	[ "Tigerious", "./fonts/Tigerious.otf", 10 ],
 
-renderLogoInFont("Vandals", "./fonts/Vandals.ttf");
-renderLogoInFont("ZORFICH", "./fonts/ZORFICH.otf", 15);
+	[ "Vandals", "./fonts/Vandals.ttf" ],
+	[ "ZORFICH", "./fonts/ZORFICH.otf", 15 ],
+];
+
+fontsToRender.forEach((params) => renderLogoInFont(...params));
