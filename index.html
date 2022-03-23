@@ -21,8 +21,8 @@
 	const shadowOpacity = 0.6;
 	const rightColor = `rgba(0, 184, 255, ${shadowOpacity})`;
 	const leftColor = `rgba(214, 0, 255, ${shadowOpacity})`;
-	const xOffset = 4;
-	const yOffset = 3;
+	const xShadowOffset = 4;
+	const yShadowOffset = 3;
 
 	// This can be customized to accomplish a wide variety of effects.
 	// This example creates a gradient inverse of the direction of the
@@ -44,7 +44,7 @@
 	}
 
 	// https://stackoverflow.com/a/36248266/6456163
-	const renderLogoInFont = (fontName, fontPath, heightOffset = 0) => {
+	const renderLogoInFont = (fontName, fontPath, yOffset = 0) => {
 		const logoFont = new FontFace(fontName, `url(${fontPath})`);
 		logoFont.load().then((font) => {
 			document.fonts.add(font);
@@ -75,7 +75,7 @@
 			// parameter to adjust for this as necessary.
 			ctx.textBaseline = "middle";
 			const xPos = canvas.width / 2;
-			const yPos = canvas.height / 2 + heightOffset;
+			const yPos = canvas.height / 2 + yOffset;
 
 			// Draw the text in the specified color and font
 			ctx.font = `${fontSize}px ${fontName}`;
@@ -87,14 +87,14 @@
 			// ctx.shadowBlur = 4;
 
 			// Draw southeast shadow
-			ctx.shadowOffsetX = xOffset;
-			ctx.shadowOffsetY = yOffset;
+			ctx.shadowOffsetX = xShadowOffset;
+			ctx.shadowOffsetY = yShadowOffset;
 			ctx.shadowColor = rightColor;
 			ctx.fillText(text, xPos, yPos);
 
 			// Draw northwest shadow
-			ctx.shadowOffsetX = -xOffset;
-			ctx.shadowOffsetY = -yOffset;
+			ctx.shadowOffsetX = -xShadowOffset;
+			ctx.shadowOffsetY = -yShadowOffset;
 			ctx.shadowColor = leftColor;
 			ctx.fillText(text, xPos, yPos);
 
