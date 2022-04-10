@@ -26,6 +26,7 @@ button {
   width: 100%;
   padding: 5px 5px;
   margin: 10px auto;
+	transition: 0.5s;
 }
 
 button span {
@@ -37,8 +38,7 @@ button span {
 
 button:hover {
   cursor: pointer;
-  background-color: #aaa;
-  /* TODO: Prettier color! */
+  background-color: rgb(207, 200, 200);
 }
 
 canvas {
@@ -69,9 +69,17 @@ canvas {
   width: var(--sidebar-width);
 	height: 100vw;
 	position: fixed;
-	background-color: gray;
-	/* TODO: Prettier color! */
-	/* TODO: Fade the right side out into the background color */
+	background-color: #eee;
+
+	/* https://css-tricks.com/gradient-borders-in-css/ */
+	border-width: 0 3px 0 0;
+  border-style: solid;
+  border-image:
+    linear-gradient(
+      to right,
+      #eee,
+      #fff
+    ) 1 100%;
 }
 
 #controls input[type=text],

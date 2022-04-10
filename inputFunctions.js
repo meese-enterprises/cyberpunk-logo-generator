@@ -1,5 +1,4 @@
 const updatePreviewSize = (size) => {
-	// TODO: Fix this to work how I want it to
 	const logoDivs = document.querySelectorAll(".logoDiv");
 	console.log("logoDivs", logoDivs);
 	logoDivs.forEach((logoDiv) => {
