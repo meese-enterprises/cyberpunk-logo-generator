@@ -1,2 +1,72 @@
-<link rel="stylesheet" href="styles.css">
-<script src="./logoGenerator.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cyberpunk Logo Generator</title>
+
+	<link rel="icon" href="">
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+	<div id="controls">
+		<div class="form-group">
+			<form>
+				<label for="previewSize">Preview Size (px)</label>
+				<div class="inputDiv">
+					<input type="number" id="previewSize" value="256"
+						oninput="updatePreviewSize(this.value);"
+						title="Changes downloaded image size" />
+				</div>
+
+				<label for="downloadSize">Download Size (px)</label>
+				<div class="inputDiv">
+					<input type="number" id="downloadSize" value="512"
+						oninput="updateDownloadSize(this.value);"
+						title="Changes downloaded image size" />
+				</div>
+
+				<label for="fontSize">Font Size (% of canvas)</label>
+				<div class="inputDiv">
+					<input type="number" id="fontSize" value="90"
+						min="1" max="100" oninput="updateFontSize(this.value);"
+						title="Changes font size" />
+				</div>
+
+				<label for="logoText">Logo Text</label>
+				<div class="inputDiv">
+					<input type="text" id="logoText" value="M"
+						oninput="updateLogoText(this.value);"
+						title="Changes the generated logo text" />
+				</div>
+
+				<label for="letterColor">Letter Color</label>
+				<div class="inputDiv">
+					<input type="color" id="letterColor" value="#000000"
+						oninput="updateLetterColor(this.value);"
+						title="Update logo letter color" />
+				</div>
+
+				<label for="colorOne">Color One</label>
+				<div class="inputDiv">
+					<input type="color" id="colorOne" value="#d600ff"
+						oninput="updateColorOne(this.value);"
+						title="Update logo color one" />
+				</div>
+
+				<label for="colorTwo">Color Two</label>
+				<div class="inputDiv">
+					<input type="color" id="colorTwo" value="#00b8ff"
+						oninput="updateColorTwo(this.value);"
+						title="Update logo color two" />
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="logo-container"></div>
+
+	<script src="./logoGenerator.js"></script>
+	<script src="./inputFunctions.js"></script>
+</body>
+</html>
